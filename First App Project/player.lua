@@ -12,7 +12,7 @@ end
 
 function Player:update(dt)
     self:move(dt)
-    self:boundaries()
+    self:checkBoundaries()
 end
 
 
@@ -26,7 +26,7 @@ function Player:move(dt)
 end
 
 
-function Player:boundaries()
+function Player:checkBoundaries()
     if self.y < 0 then
         self.y = 0
     elseif self.y + self.height > love.graphics.getHeight() then
