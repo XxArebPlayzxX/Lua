@@ -26,13 +26,13 @@ function Ball:collide()
         self.yVel = collisionPosition * 5
     end
 
-    if self.y < 0 then
+    if self.y < 0 then                              -- sick boundary system bro
         self.y = 0
         self.yVel = -self.yVel
     elseif self.y + self.height > love.graphics.getHeight() then
         self.y = love.graphics.getHeight() - self.height
         self.yVel = -self.yVel
-    elseif self.x < 0 then
+    elseif self.x < 0 then    -- tempory boundary for the sides and not the top and bottom
         self.x = 0
         self.xVel = -self.xVel
     elseif self.x + self.width > love.graphics.getWidth() then
